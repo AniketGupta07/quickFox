@@ -1,13 +1,14 @@
 <?php
 include 'config.php';
 include 'shopping.php';
+include 'autocomplete.php';
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Mimosa-Responsive eCommerce Template</title>
+        <title>quickFox</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,7 +27,7 @@ include 'shopping.php';
 		<!-- owl.carousel css -->
         <link rel="stylesheet" href="css/owl.carousel.css">
 		<!-- font-awesome css -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 		<!-- ionicons.min css -->
         <link rel="stylesheet" href="css/ionicons.min.css">
 		<!-- nivo-slider.css -->
@@ -36,6 +37,9 @@ include 'shopping.php';
 		<!-- responsive css -->
         <link rel="stylesheet" href="css/responsive.css">
 		<!-- modernizr css -->
+		<script src="js/search.js"></script>
+		        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body class="shop">
@@ -48,218 +52,166 @@ include 'shopping.php';
 		<div id="page-wraper">
 			<!-- header-area-start -->
 			<header>
-				<!-- header-top-area-start -->
-				<div class="header-top-area" id="sticky-header">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-								<!-- logo-area-start -->
-								<div class="logo-area">
-									<a href="index.html"><img src="img/logo/1.png" alt="logo" /></a>
-								</div>
-								<!-- logo-area-end -->
-							</div>
-							<div class="col-lg-7 col-md-7 hidden-sm hidden-xs">
-								<!-- menu-area-start -->
-								<div class="menu-area">
-									<nav>
-										<ul>
-											<li class="active"><a href="index.html">Home</a>
-												<ul class="sub-menu">
-													<li><a href="index-2.html">Home-2</a></li>
-													<li><a href="index-3.html">Home-3</a></li>
-													<li><a href="index-4.html">Home-4</a></li>
-													<li><a href="index-5.html">Home-5</a></li>
-													<li><a href="index-6.html">Home-6</a></li>
-												</ul>
-											</li>
-											<li><a href="shop.html">Men</a>
-												<ul class="mega-menu">
-													<li><a href="#">Integer vestib</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">finibus iaculis</a></li>
-															<li><a href="shop.html">Integer rhoncus</a></li>
-															<li><a href="shop.html">purus elittincidu</a></li>
-															<li><a href="shop.html">tincidunt est</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Phasellus inviv</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">Fusce eurhon</a></li>
-															<li><a href="shop.html">iaculis ipsum</a></li>
-															<li><a href="shop.html">ligula consectet</a></li>
-															<li><a href="shop.html">vestibulum egest</a></li>
-														</ul>
-													</li>
-													<li><a href="#">suscipit mauris</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">Integer rhoncus</a></li>
-															<li><a href="shop.html">ipsum ametus</a></li>
-															<li><a href="shop.html">Morbi vitae</a></li>
-															<li><a href="shop.html">semper vulputate</a></li>
-														</ul>
-													</li>
-													<li><a href="#">viverra lacus</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">Aliquam acsus</a></li>
-															<li><a href="shop.html">Morbi amimi</a></li>
-															<li><a href="shop.html">pretium metus</a></li>
-															<li><a href="shop.html">suscipit felis</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li><a href="shop.html">Accessories</a>
-												<ul class="mega-menu mega-menu-2">
-													<li><a href="#">suscipit mauris</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">Integer rhoncus</a></li>
-															<li><a href="shop.html">ipsum ametus</a></li>
-															<li><a href="shop.html">Morbi vitae</a></li>
-															<li><a href="shop.html">semper vulputate</a></li>
-														</ul>
-													</li>
-													<li><a href="#">viverra lacus</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">Aliquam acsus</a></li>
-															<li><a href="shop.html">Morbi amimi</a></li>
-															<li><a href="shop.html">pretium metus</a></li>
-															<li><a href="shop.html">suscipit felis</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li><a href="shop.html">Women</a>
-												<ul class="mega-menu mega-menu-2">
-													<li><a href="#">fermentum grav</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">arcu dignissim</a></li>
-															<li><a href="shop.html">congue quamm</a></li>
-															<li><a href="shop.html">necfer mentuma</a></li>
-															<li><a href="shop.html">ultricies volutpat</a></li>
-														</ul>
-													</li>
-													<li><a href="#">gravida metus</a>
-														<ul class="sub-menu-2">
-															<li><a href="shop.html">acaliquet orci</a></li>
-															<li><a href="shop.html">dignissim placera</a></li>
-															<li><a href="shop.html">risussed trist</a></li>
-															<li><a href="shop.html">Utsuscipit urna</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li><a href="blog.html">Blog</a>
-												<ul class="sub-menu">
-													<li><a href="blog.html">blog</a></li>
-													<li><a href="blog-details.html">blog details</a></li>
-												</ul>
-											</li>
-											<li><a href="#">pages</a>
-												<ul class="sub-menu">
-													<li><a href="shop.html">Shop</a></li>
-													<li><a href="product-details.html">product details</a></li>
-													<li><a href="blog.html">blog</a></li>
-													<li><a href="blog-details.html">blog details</a></li>
-													<li><a href="login.html">login</a></li>
-													<li><a href="register.html">register</a></li>
-													<li><a href="contact.html">contact</a></li>
-													<li><a href="about.html">about</a></li>
-													<li><a href="cart.php">cart</a></li>
-													<li><a href="checkout.html">checkout</a></li>
-													<li><a href="wishlist.html">wishlist</a></li>
-													<li><a href="404.html">404</a></li>
-												</ul>
-											</li>
-										</ul>
-									</nav>
-								</div>
-								<!-- menu-area-end -->
-							</div>
-							<div class="col-lg-3 col-md-3 com-sm-6 col-xs-6">
-								<!-- header-right-area-start -->
-								<div class="header-right-area">
-									<ul>
-										<li><a href="#" id="show-search"><i class="icon ion-ios-search-strong"></i></a>
-											<div class="search-content" id="hide-search">
-												<span class="close" id="close-search">
-													<i class="ion-close"></i>
-												</span>
-												<div class="search-text">
-													<h1>Search</h1>
-													<form action="#">
-														<input type="text" placeholder="search"/>
-														<button class="btn" type="button">
-															<i class="fa fa-search"></i>
-														</button>
-													</form>
-												</div>
-											</div>
-										</li>
-										<li><a href="cart.php"><i class="icon ion-bag"></i></a>
-											<span>2</span>
-											<div class="mini-cart-sub">
-												<div class="cart-product">
-													<div class="single-cart">
-														<div class="cart-img">
-															<a href="#"><img src="img/product/1.jpg" alt="book" /></a>
-														</div>
-														<div class="cart-info">
-															<h5><a href="#">Joust Duffle Bag</a></h5>
-															<p>1 x £60.00</p>
-														</div>
-													</div>
-													<div class="single-cart">
-														<div class="cart-img">
-															<a href="#"><img src="img/product/3.jpg" alt="book" /></a>
-														</div>
-														<div class="cart-info">
-															<h5><a href="#">Chaz Kangeroo Hoodie</a></h5>
-															<p>1 x £52.00</p>
-														</div>
-													</div>
-												</div>
-												<div class="cart-totals">
-													<h5>Total <span>£12.00</span></h5>
-												</div>
-												<div class="cart-bottom">
-													<a href="checkout.html">Check out</a>
-												</div>
-											</div>
-										</li>
-										<li><a href="#" id="show-cart"><i class="icon ion-drag"></i></a>
-											<div class="shapping-area" id="hide-cart">
-												<div class="single-shapping mb-20">
-													<span>Currency</span>
-													<ul>
-														<li><a href="#">€ Euro </a></li>
-														<li><a href="#">£ Pound Sterling</a></li>
-														<li><a href="#">$ US Dollar</a></li>
-													</ul>
-												</div>
-												<div class="single-shapping mb-20">
-													<span>Language</span>
-													<ul>
-														<li><a href="#"><img src="img/flag/1.jpg" alt="flag" />   English</a></li>
-														<li><a href="#"><img src="img/flag/2.jpg" alt="flag" />   French</a></li>
-													</ul>
-												</div>
-												<div class="single-shapping">
-													<span>My Account</span>
-													<ul>
-														<li><a href="register.html">Register</a></li>
-														<li><a href="login.html">Login</a></li>
-													</ul>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-								<!-- header-right-area-end -->
-							</div>
-						</div>
-					</div>
-				</div>
+                <!-- header-top-area-start -->
+                <div class="header-top-area" id="sticky-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                <!-- logo-area-start -->
+                                <div class="logo-area">
+                                    <a href="index.php"><img src="logo7.png" alt="logo" /></a>
+                                </div>
+                                <!-- logo-area-end -->
+                            </div>
+                            <div class="col-lg-7 col-md-7 hidden-sm hidden-xs">
+                                <!-- menu-area-start -->
+                                <div class="menu-area">
+                                    <nav>
+                                        <ul>
+                                            <li class="active"><a href="index.php">Home</a>
+                                                
+                                            </li>
+                                            <li><a href="bakeries1.php">Shop</a>
+                                                <ul class="mega-menu">
+                                                    <li><a href="#">Categories</a>
+                                                     <ul class="mega-menu mega-menu-2">
+                                                    <li>
+                                                        <ul class="sub-menu-2">
+                                                            <li><a href="bakeries1.php">Bakeries</a></li>
+                                                            <li><a href="groceries1.php">Groceries</a></li>
+                                                            <li><a href="stationeries1.php">Stationaries</a></li>
+                                                           
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <ul class="sub-menu-2">
+                                                            <li><a href="homecare1.php">Home care</a></li>
+                                                            <li><a href="personalcare1.php">Personal Care</a></li>
+                                                            <li><a href="fruits1.php">Fruits & Veggies</a></li>
+                                                           
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                    </li>
+                                                    
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- menu-area-end -->
+                            </div>
+                            <div class="mobile-menu-area hidden-md hidden-lg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="mobile-menu">
+                                    <nav id="mobile-menu-active">
+                                        <ul id="nav">
+                                            <li><a href="index.php">Home</a>
+                                                
+                                            </li>
+                                            <li><a href="bakeries1.php">Shop</a>
+                                                <ul>
+                                                    <li><a href="bakeries1.php">Bakeries</a></li>
+                                                    <li><a href="groceries1.php">Groceries</a></li>
+                                                    <li><a href="stationeries1.php">Stationeries</a></li>
+                                                    <li><a href="homecare1.php">Homecare</a></li>
+                                                    <li><a href="personalcare1.php">Personal Care</a></li>
+                                                    <li><a href="fruits1.php">Fruits and Veggies </a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                            
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col-lg-3 col-md-3 com-sm-6 col-xs-6">
+                                <!-- header-right-area-start -->
+                                <div class="header-right-area">
+                                    <ul>
+                                        <li><a href="near.php" title="Shops Nearby"><i class="fa fa-map-marker"></i></a>
+                                            
+                                        </li>
+                                        <li><a href="#" id="show-search"><i class="fa fa-search"></i></a>
+                                            <div class="search-content" id="hide-search">
+                                                <span class="close" id="close-search">
+                                                    <i class="fa fa-window-close"></i>
+                                                </span>
+                                                <div class="search-text">
+                                                    <h1>Search</h1>
+                                                    <form autocomplete="off" action="search.php" method="get" id="search">
+                            <div class="autocomplete">    
+                            <input type="text" name="Items" id="myInput" placeholder="Type your keyword...">
+
+                            <button type="submit" class="btn"><i class="fa fa-search" alt="Submit"></i></button>
+                        </div>
+                     
+                    </form>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li><a href="<?php if(isset($_SESSION["user"])){?>cart.php<?php } else{ ?>account/login.php<?php } ?> "><i class="fa fa-shopping-basket"></i></a>
+                                            <span><?php if(isset($_SESSION["shopping_cart"])){echo count($_SESSION["shopping_cart"]);}else{echo "0";};?></span>
+                                            <div class="mini-cart-sub">
+                                                <div class="cart-product">
+                                                    <div class="single-cart">
+                                                        <?php   
+
+                          if(isset($_SESSION["shopping_cart"]))  
+                          {  
+                               $total = 0;  
+                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
+                               {  
+                          ?> 
+                                                        <div class="cart-img">
+                                                            <a href="#"><img src="<?php echo $values["image_source"];?>" alt="book" /></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="#" data-toggle="modal" data-target="#mymodal<?php echo $values["item_id"]; ?>" ><?php echo $values["item_name"] ?></a></h5>
+                                                            <p>Quantity : <?php echo $values["quantity"]?> </p>
+                                                        </div>
+                                                    <?php }} ?>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="cart-bottom">
+                                                    <a href="<?php if(isset($_SESSION["user"])){?>cart.php<?php } else{ ?>account/login.php<?php } ?> ">Edit Cart</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li><a href="#" id="show-cart" title="Account"><i class="fa fa-reorder"></i></a>
+                                            <div class="shapping-area" id="hide-cart">
+                                                
+                                                <div class="single-shapping">
+                                                    <span>My Account</span>
+                                                    <?php if(isset($_SESSION["user"])){ ?>
+                                                    <ul>
+                                                        <li>Hello <?php echo $_SESSION["user"]; ?></li>
+                                                        <li><a href="logout.php">Log Out</a>                
+</li>
+                                                    </ul>    
+                                                    <?php } 
+                                                    else{
+                                                    ?>
+                                                    <ul>
+                                                        <li><a href="account/login.php">Register</a></li>
+                                                        <li><a href="account/login.php">Login</a></li>
+                                                    </ul>
+                                                <?php } ?>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- header-right-area-end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
 				<!-- header-top-area-end -->
 				<!-- mobile-menu-area-start -->
 				<div class="mobile-menu-area hidden-md hidden-lg">
@@ -269,81 +221,21 @@ include 'shopping.php';
 								<div class="mobile-menu">
 									<nav id="mobile-menu-active">
 										<ul id="nav">
-											<li><a href="index.html">Home</a>
+											<li><a href="index.php">Home</a>
+												
+											</li>
+											<li><a href="groceries1.php">Shop</a>
 												<ul>
-													<li><a href="index-2.html">Home-2</a></li>
-													<li><a href="index-3.html">Home-3</a></li>
-													<li><a href="index-4.html">Home-4</a></li>
-													<li><a href="index-5.html">Home-5</a></li>
-													<li><a href="index-6.html">Home-6</a></li>
+													<li class="active"><a href="#">Bakeries</a></li>
+													<li><a href="groceries1.php">Groceries</a></li>
+													<li><a href="stationeries1.php">Stationeries</a></li>
+													<li><a href="homecare1.php">Homecare</a></li>
+													<li><a href="personalcare1.php">Personal Care</a></li>
+													<li><a href="fruits1.php">Fruits and Veggies </a></li>
+													
 												</ul>
 											</li>
-											<li><a href="shop.html">Men</a>
-												<ul>
-													<li><a href="shop.html">finibus iaculis</a></li>
-													<li><a href="shop.html">Integer rhoncus</a></li>
-													<li><a href="shop.html">purus elittincidu</a></li>
-													<li><a href="shop.html">tincidunt est</a></li>
-													<li><a href="shop.html">Fusce eurhon</a></li>
-													<li><a href="shop.html">iaculis ipsum</a></li>
-													<li><a href="shop.html">ligula consectet</a></li>
-													<li><a href="shop.html">vestibulum egest</a></li>
-													<li><a href="shop.html">Integer rhoncus</a></li>
-													<li><a href="shop.html">ipsum ametus</a></li>
-													<li><a href="shop.html">Morbi vitae</a></li>
-													<li><a href="shop.html">semper vulputate</a></li>
-													<li><a href="shop.html">Aliquam acsus</a></li>
-													<li><a href="shop.html">Morbi amimi</a></li>
-													<li><a href="shop.html">pretium metus</a></li>
-													<li><a href="shop.html">suscipit felis</a></li>
-												</ul>
-											</li>
-											<li><a href="shop.html">Accessories</a>
-												<ul>
-													<li><a href="shop.html">Integer rhoncus</a></li>
-													<li><a href="shop.html">ipsum ametus</a></li>
-													<li><a href="shop.html">Morbi vitae</a></li>
-													<li><a href="shop.html">semper vulputate</a></li>
-													<li><a href="shop.html">Aliquam acsus</a></li>
-													<li><a href="shop.html">Morbi amimi</a></li>
-													<li><a href="shop.html">pretium metus</a></li>
-													<li><a href="shop.html">suscipit felis</a></li>
-												</ul>
-											</li>
-											<li><a href="shop.html">Women</a>
-												<ul>
-													<li><a href="shop.html">arcu dignissim</a></li>
-													<li><a href="shop.html">congue quamm</a></li>
-													<li><a href="shop.html">necfer mentuma</a></li>
-													<li><a href="shop.html">ultricies volutpat</a></li>
-													<li><a href="shop.html">acaliquet orci</a></li>
-													<li><a href="shop.html">dignissim placera</a></li>
-													<li><a href="shop.html">risussed trist</a></li>
-													<li><a href="shop.html">Utsuscipit urna</a></li>
-												</ul>
-											</li>
-											<li><a href="blog.html">blog</a>
-												<ul>
-													<li><a href="blog.html">Blog</a></li>
-													<li><a href="blog-details.html">blog details</a></li>
-												</ul>
-											</li>
-											<li><a href="shop.html">Pages</a>
-												<ul>
-													<li><a href="shop.html">Shop</a></li>
-													<li><a href="product-details.html">product details</a></li>
-													<li><a href="blog.html">Blog</a></li>
-													<li><a href="blog-details.html">blog details</a></li>
-													<li><a href="about.html">About</a></li>
-													<li><a href="contact.html">Contact</a></li>
-													<li><a href="checkout.html">Checkout</a></li>
-													<li><a href="cart.php">Cart</a></li>
-													<li><a href="login.html">Login</a></li>
-													<li><a href="register.html">Register</a></li>
-													<li><a href="wishlist.html">Wishlist</a></li>
-													<li><a href="404.html">404 Page</a></li>
-												</ul>
-											</li>
+											
 										</ul>
 									</nav>
 								</div>
@@ -360,10 +252,10 @@ include 'shopping.php';
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="breadcrumb-content text-center">
-								<h2>shop</h2>
+								<h2>Search Results</h2>
 								<ul>
-									<li><a href="#">Home /</a></li>
-									<li class="active"><a href="#">shop</a></li>
+									<li><a href="#">Shop /</a></li>
+									<li class="active"><a href="#">Search</a></li>
 								</ul>
 							</div>
 						</div>
@@ -376,47 +268,77 @@ include 'shopping.php';
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
-							<!-- page-bar-start -->
 							<div class="page-bar">
 								<div class="shop-tab">
 									<!-- tab-menu-start -->
 									<div class="tab-menu-3">
 										<ul>
-											<li class="active"><a href="#th" data-toggle="tab"><i class="fa fa-list"></i></a></li>
-											<li><a href="#list"  data-toggle="tab"><i class="fa fa-th"></i></a></li>
+											<li><a href="#th" data-toggle="tab"><img src="img/list.png"> ></a></li>
+											<li class="active"><a href="#list"  data-toggle="tab"><img src="img/th.jpg">></a></li>
 										</ul>
 									</div>
 									<!-- tab-menu-end -->
-									<!-- toolbar-sorter-start -->
-									<div class="toolbar-sorter">
-										<select  class="sorter-options" data-role="sorter">
-											<option selected="selected" value="Lowest">Sort By: Default</option>
-											<option value="Highest">Sort By: Name (A - Z)</option>
-											<option value="Product">Sort By: Name (Z - A)</option>
-										</select>
-									</div>
-									<!-- toolbar-sorter-end -->
-									<!-- toolbar-sorter-2-start -->
-									<div class="toolbar-sorter-2">
-										<select  class="sorter-options" data-role="sorter">
-											<option selected="selected" value="Lowest">Show: 9</option>
-											<option value="Highest">Show: 25</option>
-											<option value="Product">Show: 50</option>
-										</select>
-									</div>
-									<!-- toolbar-sorter-2-end -->
+									
 								</div>
-							</div>
-							<!-- page-bar-end -->
+							</div>	
 						</div>
 					</div>
 					<div class="row">
-                  
 						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 pull-right">
 							<!-- shop-right-area-start -->
 							<div class="shop-right-area mb-40-2 mb-30">
 								<!-- tab-area-start -->
-			<?php
+								<div class="tab-content">
+									<div class="tab-pane fade" id="th">
+<?php
+            $va=$_GET["Items"];
+              // echo $va;
+
+            $sql = " SELECT * FROM items WHERE name regexp '".$va."' OR categories regexp '".$va."' ";
+
+            $result=mysqli_query($connect, $sql);
+                if(mysqli_num_rows($result) > 0)  
+                {  
+                     while($row = mysqli_fetch_array($result))  
+                     {  
+?>    
+
+										<!-- product-wrapper-start -->
+										<div class="product-wrapper product-wrapper-3 mb-40">
+											<div class="product-img">
+												<a href="#">
+													<img src="<?php echo $row["source"]; ?>" alt="product" class="primary"/>
+													<img src="<?php echo $row["source"]; ?>" alt="product" class="secondary"/>
+												</a>
+												<div class="product-icon">
+													<a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><i class="fa fa-shopping-basket" style="color: black;"></i></a>
+													<a href="#" data-toggle="modal" data-target="#mymodal<?php echo $row["id_"]; ?>" title="Quick View"><i class="fa fa-bars" style="color: black;"></i></a>
+												</div>
+											</div>
+											<div class="product-content">
+												<div class="manufacture-product">
+													
+													<div class="rating">
+														<ul>
+															<li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+															<li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+															<li><a href="#"><i style="color: #FFD700;"class="fa fa-star"></i></a></li>
+															<li><a href="#"><i style="color: #FFD700;"class="fa fa-star"></i></a></li>
+															<li><a href="#"><i style="color: #FFD700;"class="fa fa-star"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<h2><a href="#" data-toggle="modal" data-target="#mymodal<?php echo $row["id_"]; ?>"><br><br><br><?php echo $row["name"]; ?></a></h2>
+												
+											</div>
+										</div>
+										
+																				<?php }} ?>
+
+									</div>
+									<div class="tab-pane active" id="list">
+										<div class="row">
+											<?php
             $va=$_GET["Items"];
               // echo $va;
 
@@ -427,126 +349,106 @@ include 'shopping.php';
                 {  
                      while($row = mysqli_fetch_array($result))  
                      {  
-    
-            ?>        
-								<div class="tab-content">
-									<div class="tab-pane active" id="th<?php echo $row["id_"]; ?>">
-										<!-- product-wrapper-start -->
-										<div class="product-wrapper product-wrapper-3 mb-40">
-											<div class="product-img">
-												<a href="#">
-													<img src="<?php echo $row["source"]; ?>" alt="product" class="primary"/>
-													<img src="<?php echo $row["source"]; ?>" alt="product" class="secondary"/>
-												</a>
-												<div class="product-icon">
-													<a href="#" data-toggle="tooltip" title="Add to Cart"><i class="icon ion-bag"></i></a>
-													<a href="#" data-toggle="tooltip" title="Compare this Product"><i class="icon ion-android-options"></i></a>
-													<a href="#" data-toggle="modal" data-target="#mymodal<?php echo $row["id_"]; ?>" title="Quick View"><i class="icon ion-android-open"></i></a>
+?>    
+											<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+												<!-- product-wrapper-start -->
+												<div class="product-wrapper mb-40">
+													<div class="product-img">
+														<a href="#">
+															<img src="<?php echo $row["source"]; ?>" alt="product" class="primary"/>
+															<img src="<?php echo $row["source"]; ?>" alt="product" class="secondary"/>
+														</a>
+														<div class="product-icon">
+													<a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><i class="fa fa-shopping-basket" style="color: black;"></i></a>
+													<a href="#" data-toggle="modal" data-target="#mymodal<?php echo $row["id_"]; ?>" title="Quick View"><i class="fa fa-bars" style="color: black;"></i></a>
 												</div>
-											</div>
-											<div class="product-content">
-												<div class="manufacture-product">
-													
-													<div class="rating">
-														<ul>
-															<li><a href="#"><i class="fa fa-star"></i></a></li>
-															<li><a href="#"><i class="fa fa-star"></i></a></li>
-															<li><a href="#"><i class="fa fa-star"></i></a></li>
-															<li><a href="#"><i class="fa fa-star"></i></a></li>
-															<li><a href="#"><i class="fa fa-star"></i></a></li>
-														</ul>
+													</div>
+													<div class="product-content pt-20">
+														<div class="manufacture-product">
+															<div class="rating">
+																<ul>
+                                                            <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i style="color: #FFD700;"class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i style="color: #FFD700;"class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i style="color: #FFD700;"class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i style="color: #FFD700;"class="fa fa-star"></i></a></li>
+																</ul>
+															</div>
+														</div>
+														<h2><a href="product-details.html"><?php echo $row["name"]; ?></a></h2>
 													</div>
 												</div>
-												<h2><a href="product-details.html"><br><br><br><?php echo $row["name"]; ?></a></h2>
-												
+												<!-- product-wrapper-end -->
 											</div>
-										</div>
-										<!-- product-wrapper-end -->
-									
-									</div>
-								</div>
-								<div class="modal-area">
-				<!-- single-modal-start -->
-				<div class="modal fade" id="mymodal<?php echo $row["id_"]; ?>" tabindex="-1" role="dialog">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="modal-img">
-									<div class="single-img">
-										<img src="<?php echo $row["source"]; ?>" alt="hat" class="primary" />
-									</div>
-								</div>
-								<div class="model-text">
-									<h2><a href="#"><?php echo $row["name"]; ?></a> </h2>
-									<div class="product-rating">
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star-o"></i></a>
-									</div>
-									
-									
-									<form method="post">
-										<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
+                                            <!-- product-wrapper-end --><div class="modal-area">
+                <!-- single-modal-start -->
+                <div class="modal fade" id="mymodal<?php echo $row["id_"]; ?>" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-img">
+                                    <div class="single-img">
+                                        <img src="<?php echo $row["source"]; ?>" alt="hat" class="primary" />
+                                    </div>
+                                </div>
+                                <div class="model-text">
+                                    <h2><a href="#"><?php echo $row["name"]; ?></a> </h2>
+                                    <div class="product-rating">
+                                        <a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a>
+                                        <a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a>
+                                        <a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a>
+                                        <a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a>
+                                        <a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a>
+                                    </div>
+                                    
+                                    
+                                    <form method="get">
+                                        <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
                                          <input type="hidden" name="hidden_source" value="<?php echo $row["source"]; ?>" />  
                                          <input type="hidden" name="hidden_id" value="<?php echo $row["id_"]; ?>" /> 
-										<input type="number"  name="quantity" value="1"/>
-										<button type="submit" name="add_to_cart">Add to cart</button>
-									</form>
-									<div class="product-meta">
-										<span>
-											Categories: 
-											<a href="#"><?php echo $row["categories"]; ?></a>
-										</span>
-										<span>
-											Tags: 
-											<a href="#">albums</a>,<a href="#">Music</a>
-										</span>
+                                        <input type="number"  name="quantity" value="1"/>
+                                        <button type="submit" name="add_to_cart">Add to cart</button>
+                                    </form>
+                                    <div class="product-meta">
+                                        <span>
+                                            Categories: 
+                                            <a href="#"><?php echo $row["categories"]; ?></a>
+                                        </span>
+                                        <span>
+                                            Tags: 
+                                            <a href="#">albums</a>,<a href="#">Music</a>
+                                        </span>
+                                    </div>
+                                    <!-- social-icon-start -->
+                                    <div class="social-icon mt-20">
+                                        <ul>
+                                            <li><a href="#" data-toggle="tooltip" title="Share on Facebook"><i class="fa fa-facebook" style="color: black;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" title="Share on Twitter"><i  class="fa fa-twitter" style="color: black;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" title="Email to a Friend"><i class="fa fa-envelope-o" style="color: black;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" title="Pin on Pinterest"><i class="fa fa-pinterest" style="color: black;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" title="Share on Google+"><i class="fa fa-google-plus" style="color: black;"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- social-icon-end -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single-modal-end -->
+            </div>
+											<?php }} ?>
+
+										</div>
 									</div>
-									<!-- social-icon-start -->
-									<div class="social-icon mt-20">
-										<ul>
-											<li><a href="#" data-toggle="tooltip" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" data-toggle="tooltip" title="Share on Twitter"><i  class="fa fa-twitter"></i></a></li>
-											<li><a href="#" data-toggle="tooltip" title="Email to a Friend"><i class="fa fa-envelope-o"></i></a></li>
-											<li><a href="#" data-toggle="tooltip" title="Pin on Pinterest"><i class="fa fa-pinterest"></i></a></li>
-											<li><a href="#" data-toggle="tooltip" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
-										</ul>
-									</div>
-									<!-- social-icon-end -->
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- single-modal-end -->
-			</div>
-							<?php }
-						}
-						 ?>
 								<!-- tab-area-end -->
-								<!-- pagination-area-start -->
-								<div class="pagination-area">
-									<div class="pagination-number">
-										<ul>
-											<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-											<li class="active"><a href="#">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-										</ul>
-									</div>
-									<div class="product-count">
-										<p>Showing 1 - 12 of 13 items</p>
-									</div>
-								</div>
-								<!-- pagination-area-end -->
+							
 							</div>
 							<!-- shop-right-area-end -->
 						</div>
@@ -560,72 +462,12 @@ include 'shopping.php';
 									</div>
 									<div class="Categories-list">
 										<ul>
-											<li><a href="#">Women (19)</a></li>
-											<li><a href="#">leo sodales (19)</a></li>
-											<li><a href="#">Accessories (16)</a></li>
-											<li><a href="#">Men (19)</a></li>
-											<li><a href="#">sagittis vitae (14)</a></li>
-											<li><a href="#">egestas elit (12)</a></li>
-											<li><a href="#">egestas magna (17)</a></li>
-											<li><a href="#">vestibulum ligula (17)</a></li>
-										</ul>
-									</div>
-								</div>
-								<!-- single-shop-end -->
-								<!-- single-shop-start -->
-								<div class="single-shop mb-40">
-									<div class="Categories-title">
-										<h3>Price Filter</h3>
-									</div>
-									<div id="slider-range"></div>
-									<input type="text" name="text" id="amount" />
-								</div>
-								<!-- single-shop-end -->
-								<!-- single-shop-start -->
-								<div class="single-shop mb-40">
-									<div class="Categories-title">
-										<h3>Brand</h3>
-									</div>
-									<div class="Categories-list">
-										<ul>
-											<li><a href="#">Calvin Klein (11)</a></li>
-											<li><a href="#">Diesel (15)</a></li>
-											<li><a href="#">Polo (13)</a></li>
-											<li><a href="#">Tommy Hilfiger  (14)</a></li>
-										</ul>
-									</div>
-								</div>
-								<!-- single-shop-end -->
-								<!-- single-shop-start -->
-								<div class="single-shop mb-40">
-									<div class="Categories-title">
-										<h3>Size</h3>
-									</div>
-									<div class="Categories-list">
-										<ul>
-											<li><a href="#">L (14)</a></li>
-											<li><a href="#">M (11)</a></li>
-											<li><a href="#">S (12)</a></li>
-											<li><a href="#">XL (14)</a></li>
-											<li><a href="#">XS (12)</a></li>
-											<li><a href="#">XXL (13)</a></li>
-										</ul>
-									</div>
-								</div>
-								<!-- single-shop-end -->
-								<!-- single-shop-start -->
-								<div class="single-shop mb-40">
-									<div class="Categories-title">
-										<h3>Color</h3>
-									</div>
-									<div class="Categories-list">
-										<ul>
-											<li><a href="#">Black (12)</a></li>
-											<li><a href="#">Blue (10)</a></li>
-											<li><a href="#">Green (14)</a></li>
-											<li><a href="#">Grey (14)</a></li>
-											<li><a href="#">Red (12)</a></li>
-											<li><a href="#">White (13)</a></li>
+											<li class="active"><a href="bakeries1.php">Bakeries</a></li>
+											<li><a href="stationeries1.php">Stationeries</a></li>
+											<li><a href="personalcare1.php">Personal Care</a></li>
+											<li><a href="homecare1.php">Home Care</a></li>
+											<li><a href="fruits1.php">Fruits and Veggies</a></li>
+											<li><a href="groceries1.php">Groceries</a></li>
 										</ul>
 									</div>
 								</div>
@@ -633,31 +475,11 @@ include 'shopping.php';
 							</div>
 							<!-- shop-left-area-end -->
 						</div>
-					</div>	
-				</div>
-			</div>
-			<!-- shop-main-area-end -->
-			<!-- newslatter-area-start -->
-			<div class="newslatter-area pt-80">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="bt-top ptb-80">
-								<div class="newlatter-content text-center">
-									<h6>Special Offers For Subscribers</h6>
-									<h3>Ten Percent Member Discount</h3>
-									<p>Subscribe to our newsletters now and stay up to date with new collections, the latest lookbooks and exclusive offers.</p>
-									<form action="#">
-										<input type="text" placeholder="Enter your email address here..."/>
-										<button type="submit">Subscribe</button>
-									</form>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
-			<!-- newslatter-area-end -->
+			<!-- shop-main-area-end -->
+			
 			<!-- footer-area-start -->
 			<footer>
 				<div class="footer-area ptb-40">
@@ -665,15 +487,13 @@ include 'shopping.php';
 						<div class="row">
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 								<!-- footer-logo-start -->
-								<div class="footer-logo mb-3">
-									<a href="#"><img src="img/logo/2.png" alt="logo" /></a>
-								</div>
+									<a href="#" id="logoo"><img src="logo7.png" alt="logo" /></a>
 								<!-- footer-logo-end -->
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<!-- copy-right-area-start -->
 								<div class="copy-right-area mb-3 text-center">
-									<p>Copyright © 2018 <a href="#">Hastech</a> . All Right Reserved</p>
+									<p>Copyright © 2018 <a href="#">quickFox</a> . All Right Reserved</p>
 								</div>
 								<!-- copy-right-area-end -->
 							</div>
@@ -681,11 +501,11 @@ include 'shopping.php';
 								<!-- footer-social-icon-start -->
 								<div class="footer-social-icon">
 									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-rss"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="#"><i style="color: white;" class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i style="color: white;"class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i style="color: white;" class="fa fa-rss"></i></a></li>
+										<li><a href="#"><i style="color: white;"class="fa fa-google-plus"></i></a></li>
+										<li><a href="#"><i style="color: white;"class="fa fa-linkedin"></i></a></li>
 									</ul>
 								</div>
 								<!-- footer-social-icon-end -->
@@ -731,5 +551,114 @@ include 'shopping.php';
         <script src="js/plugins.js"></script>
 		<!-- main js -->
         <script src="js/main.js"></script>
+        <script src="js/search.js"></script>
     </body>
 </html>
+<script type="text/javascript"> 	
+	
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+      });
+}
+
+/*An array containing all the country names in the world:*/
+// 
+var countries= <?php echo json_encode($shoplat);?>
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+
+
+</script>

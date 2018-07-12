@@ -34,6 +34,7 @@ include 'autocomplete.php';
         <link rel="stylesheet" href="css/nivo-slider.css">
         <!-- style css -->
         <link rel="stylesheet" href="style1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
  -->
 
@@ -42,13 +43,10 @@ include 'autocomplete.php';
         <!-- modernizr css -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="js/search.js"></script>
+
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
+        
         <!-- page-wraper-start -->
         <div id="page-wraper">
             <!-- header-area-start -->
@@ -59,9 +57,9 @@ include 'autocomplete.php';
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                 <!-- logo-area-start -->
-                                <div class="logo-area">
-                                    <a href="index.html"><img src="img/flash.png" alt="logo" /></a>
-                                </div>
+<!--                                 <div class="logo-area">
+ -->                                    <a href="index.php"><img src="logo7.png" alt="logo" /></a>
+                                
                                 <!-- logo-area-end -->
                             </div>
                             <div class="col-lg-7 col-md-7 hidden-sm hidden-xs">
@@ -69,10 +67,10 @@ include 'autocomplete.php';
                                 <div class="menu-area">
                                     <nav>
                                         <ul>
-                                            <li class="active"><a href="index.html">Home</a>
+                                            <li class="active"><a href="index.php">Home</a>
                                                 
                                             </li>
-                                            <li><a href="bakeries1.php">Shop</a>
+                                            <li><a href="groceries1.php">Shop</a>
                                                 <ul class="mega-menu">
                                                     <li><a href="#">Categories</a>
                                                      <ul class="mega-menu mega-menu-2">
@@ -110,7 +108,7 @@ include 'autocomplete.php';
                                             <li><a href="index.php">Home</a>
                                                 
                                             </li>
-                                            <li><a href="shop.html">Men</a>
+                                            <li><a href="groceries1.php">Shop</a>
                                                 <ul>
                                                     <li><a href="bakeries1.php">Bakeries</a></li>
                                                     <li><a href="groceries1.php">Groceries</a></li>
@@ -133,13 +131,13 @@ include 'autocomplete.php';
                                 <!-- header-right-area-start -->
                                 <div class="header-right-area">
                                     <ul>
-                                        <li><a href="#" title="Shops Nearby"><img src="img/mark.jpeg"></a>
+                                        <li><a href="near.php" title="Shops Nearby"><i class="fa fa-map-marker"></i></a>
                                             
                                         </li>
-                                        <li><a href="#" id="show-search"><i class="icon ion-ios-search-strong"></i></a>
+                                        <li><a href="#" id="show-search"><i class="fa fa-search"></i></a>
                                             <div class="search-content" id="hide-search">
                                                 <span class="close" id="close-search">
-                                                    <i class="ion-close"></i>
+                                                    <i class="fa fa-window-close"></i>
                                                 </span>
                                                 <div class="search-text">
                                                     <h1>Search</h1>
@@ -147,14 +145,14 @@ include 'autocomplete.php';
                             <div class="autocomplete">    
                             <input type="text" name="Items" id="myInput" placeholder="Type your keyword...">
 
-                            <button type="submit" class="btn"><img src="img/core-img/search.png" alt="Submit"></button>
+                            <button type="submit" class="btn"><i class="fa fa-search" alt="Submit"></i></button>
                         </div>
                      
                     </form>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="cart.php"><img src="img/cart.jpg" style="width: 30px;padding-bottom: -2px; "></a>
+                                        <li><a href="<?php if(isset($_SESSION["user"])){?>cart.php<?php } else{ ?>account/login.php<?php } ?> "><i class="fa fa-shopping-basket" ></i></a>
                                             <span><?php if(isset($_SESSION["shopping_cart"])){echo count($_SESSION["shopping_cart"]);}else{echo "0";};?></span>
                                             <div class="mini-cart-sub">
                                                 <div class="cart-product">
@@ -180,19 +178,28 @@ include 'autocomplete.php';
                                                 </div>
                                                 
                                                 <div class="cart-bottom">
-                                                    <a href="cart.php">Edit Cart</a>
+                                                    <a href="<?php if(isset($_SESSION["user"])){?>cart.php<?php } else{ ?>account/login.php<?php } ?> ">Edit Cart</a>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="#" id="show-cart" title="Account"><img src="img/menu.png"></a>
+                                        <li><a href="#" id="show-cart" title="Account"><i class="fa fa-reorder"></i></a>
                                             <div class="shapping-area" id="hide-cart">
                                                 
                                                 <div class="single-shapping">
                                                     <span>My Account</span>
+                                                    <?php if(isset($_SESSION["user"])){ ?>
+                                                    <ul>
+                                                        <li>Hello <?php echo $_SESSION["user"]; ?></li>
+                                                        <li><a href="logout.php">Log Out</a></li>
+                                                    </ul>    
+                                                    <?php } 
+                                                    else{
+                                                    ?>
                                                     <ul>
                                                         <li><a href="account/signup.php">Register</a></li>
                                                         <li><a href="account/login.php">Login</a></li>
                                                     </ul>
+                                                <?php } ?>
                                                 </div>
                                             </div>
                                         </li>
@@ -212,7 +219,7 @@ include 'autocomplete.php';
                                 <div class="mobile-menu">
                                     <nav id="mobile-menu-active">
                                         <ul id="nav">
-                                            <li><a href="index.html">Home</a>
+                                            <li><a href="index.php">Home</a>
                                                 <!--  -->
                                             </li>
                                <li><a href="bakeries1.php">Shop</a>
@@ -252,7 +259,7 @@ include 'autocomplete.php';
                                 <div class="slider-text">
                                     <h3 class="wow fadeInLeft" data-wow-delay=".3s">Personal & Home care</h3>
                                     <h2 class="wow fadeInRight" data-wow-delay=".5s">New arrivals!</h2>
-                                    <h1 class="wow fadeInRight" data-wow-delay=".7s">amazing quickfox</h1>
+                                    <h1 class="wow fadeInRight" data-wow-delay=".7s">amazing quickFox</h1>
                                     <h4 class="wow fadeInLeft" data-wow-delay="1.0s">We bring to you a new age of shopping and making a shopping list. <br />          The most interactive and innovative local shopping ever. </h4>
                                     
                                 </div>
@@ -267,7 +274,7 @@ include 'autocomplete.php';
                                 <div class="slider-text">
                                       <h3 class="wow fadeInLeft" data-wow-delay=".3s">Daily needs</h3>
                                     <h2 class="wow fadeInRight" data-wow-delay=".5s">New arrivals!</h2>
-                                    <h1 class="wow fadeInRight" data-wow-delay=".7s">amazing quickfox</h1>
+                                    <h1 class="wow fadeInRight" data-wow-delay=".7s">amazing quickFox</h1>
                                     <h4 class="wow fadeInLeft" data-wow-delay="1.0s">We bring to you a new age of shopping and making a shopping list. <br />          The most interactive and innovative local shopping ever. </h4>
 
                                 </div>
@@ -281,8 +288,8 @@ include 'autocomplete.php';
                             <div class="col-lg-12">
                                 <div class="slider-text">
                                       <h3 class="wow fadeInLeft" data-wow-delay=".3s">Luxuries</h3>
-                                    <h2 class="wow fadeInRight" data-wow-delay=".5s">New arrivals!</h2>
-                                    <h1 class="wow fadeInRight" data-wow-delay=".7s">amazing quickfox</h1>
+                                    <h2 class="wow fadeInRight black" data-wow-delay=".5s">New arrivals!</h2>
+                                    <h1 class="wow fadeInRight black" data-wow-delay=".7s">amazing quickFox</h1>
                                     <h4 class="wow fadeInLeft" data-wow-delay="1.0s">We bring to you a new age of shopping and making a shopping list. <br />          The most interactive and innovative local shopping ever. </h4>
 
                                 </div>
@@ -364,7 +371,7 @@ include 'autocomplete.php';
                                     <a href="stationeries1.php"><img src="img/banner/3.jpg" alt="banner" /></a>
                                 </div>
                                 <div class="banner-content">
-                                    <a href="stationeries1.pho">Stationery</a>
+                                    <a href="stationeries1.php">Stationery</a>
                                 </div>
                             </div>
                             <!-- single-banner-end -->
@@ -421,19 +428,19 @@ include 'autocomplete.php';
                                                 <img src="<?php echo $row["source"];?>" alt="product" class="secondary"/>
                                             </a>
                                             <div class="product-icon1">
-                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><img src="img/cart.jpg"></a>
+                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><i class="fa fa-shopping-basket" style="color: black;"></i></a>
                                                 </div>
                                         </div>
                                         <div class="product-content pt-20">
                                             <div class="manufacture-product">
                                                 <div class="rating">
                                                     <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -470,19 +477,19 @@ include 'autocomplete.php';
                                                 <img src="<?php echo $row["source"];?>" alt="product" class="secondary"/>
                                             </a>
                                             <div class="product-icon1">
-                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><img src="img/cart.jpg"></a>
+                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><i class="fa fa-shopping-basket" style="color: black;"></i></a>
                                                 </div>
                                         </div>
                                         <div class="product-content pt-20">
                                             <div class="manufacture-product">
                                                 <div class="rating">
                                                     <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -517,19 +524,19 @@ include 'autocomplete.php';
                                                 <img src="<?php echo $row["source"];?>" alt="product" class="secondary"/>
                                             </a>
                                             <div class="product-icon1">
-                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><img src="img/cart.jpg"></a>
+                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><i class="fa fa-shopping-basket" style="color: black;"></i></a>
                                                 </div>
                                         </div>
                                         <div class="product-content pt-20">
                                             <div class="manufacture-product">
                                                 <div class="rating">
                                                     <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -563,19 +570,19 @@ include 'autocomplete.php';
                                                 <img src="<?php echo $row["source"];?>" alt="product" class="secondary"/>
                                             </a>
                                             <div class="product-icon1">
-                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><img src="img/cart.jpg"></a>
+                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><i class="fa fa-shopping-basket" style="color: black;"></i></a>
                                                 </div>
                                         </div>
                                         <div class="product-content pt-20">
                                             <div class="manufacture-product">
                                                 <div class="rating">
                                                     <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -601,19 +608,15 @@ include 'autocomplete.php';
                             <div class="col-lg-12">
                                 <div class="single-testimonial text-center">
                                     <div class="testimonial-img">
-                                        <a href="#"><img src="img/maggi.jpg" alt="man" /></a>
+                                        <a href="#"><img src="img/maggi.png" alt="man" /></a>
                                     </div>
-                                    <div class="testimonial-content">
-                                        <p>This is Photoshops version  of Lorem Ipsum. Proin gravida nibh vel velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie augue magna. Pellentesque felis lorem, pulvinar sed eros n..</p>
-                                        <i class="fa fa-quote-right"></i>
-                                        <h4>Rebecka Filson</h4>
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-testimonial text-center">
                                     <div class="testimonial-img">
-                                        <a href="#"><img src="img/chocolate.jpg" alt="man" /></a>
+                                        <a href="#"><img src="img/chocolate.png" alt="man" /></a>
                                     </div>
                                     <div class="testimonial-content">
                                         
@@ -660,19 +663,19 @@ include 'autocomplete.php';
                                                 <img src="<?php echo $row["source"];?>" alt="product" class="secondary"/>
                                             </a>
                                             <div class="product-icon1">
-                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><img src="img/cart.jpg"></a>
+                                                    <a href="shopping.php?hidden_id=<?php echo $row["id_"]; ?>&hidden_name=<?php echo $row["name"]; ?>&hidden_source=<?php echo $row["source"]; ?>&quantity=1&add_to_cart=" data-toggle="tooltip" title="Add to Cart"><i class="fa fa-shopping-basket" style="color: black;"></i></a>
                                                 </div>
                                         </div>
                                         <div class="product-content pt-20">
                                             <div class="manufacture-product">
                                                 <div class="rating">
                                                     <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
+                                                        <li><a href="#"><i style="color: #FFD700;" class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -690,164 +693,6 @@ include 'autocomplete.php';
                     <!-- tab-area-end -->
                 </div>
            </div>
-            <!-- arrivals-area-end -->
-            <!-- banner-area-start -->
-            <div class="banner-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <!-- single-banner-start -->
-                            <div class="single-banner mb-3">
-                                <div class="banner-img">
-                                    <a href="#"><img src="img/banner/7.jpg" alt="banner" /></a>
-                                </div>
-                                <div class="banner-content-2">
-                                    <h3>New Arrivals</h3>
-                                    <h2>White Sneakers</h2>
-                                    <h2>for Men’s</h2>
-                                    <a href="#">Shop now</a>
-                                </div>
-                            </div>
-                            <!-- single-banner-end -->
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <!-- single-banner-start -->
-                            <div class="single-banner">
-                                <div class="banner-img">
-                                    <a href="#"><img src="img/banner/8.jpg" alt="banner" /></a>
-                                </div>
-                                <div class="banner-content-2">
-                                    <h3>Products amazing!</h3>
-                                    <h2>Short  T-Shirts</h2>
-                                    <h2>for Women’s</h2>
-                                    <a href="#">Shop now</a>
-                                </div>
-                            </div>
-                            <!-- single-banner-end -->
-                        </div>
-                    </div>
-                </div>
-           </div>
-            <!-- banner-area-end -->
-            <!-- banner-area-2-start -->
-            <div class="banner-area-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="br-bottom ptb-80">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <!-- single-banner-2-start -->
-                                <div class="single-banner-2 text-center mb-3">
-                                    <div class="banner-icon">
-                                        <a href="#"><img src="img/banner/2.png" alt="banner" /></a>
-                                    </div>
-                                    <div class="banner-text">
-                                        <h2>Free Shipping Worldwide</h2>
-                                        <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
-                                    </div>
-                                </div>
-                                <!-- single-banner-2-end -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <!-- single-banner-2-start -->
-                                <div class="single-banner-2 text-center mb-3">
-                                    <div class="banner-icon">
-                                        <a href="#"><img src="img/banner/3.png" alt="banner" /></a>
-                                    </div>
-                                    <div class="banner-text">
-                                        <h2>Money Back Guarantee</h2>
-                                        <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
-                                    </div>
-                                </div>
-                                <!-- single-banner-2-end -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <!-- single-banner-2-start -->
-                                <div class="single-banner-2 text-center">
-                                    <div class="banner-icon">
-                                        <a href="#"><img src="img/banner/4.png" alt="banner" /></a>
-                                    </div>
-                                    <div class="banner-text">
-                                        <h2>online support 24/7</h2>
-                                        <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
-                                    </div>
-                                </div>
-                                <!-- single-banner-2-end -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- banner-area-2-end -->
-            <!-- blog-area-start -->
-            <div class="blog-area ptb-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title mb-30 text-center">
-                                <h2>From Our Blog</h2>
-                                <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas.</p>
-                            </div>
-                        </div>
-                        <div class="blog-active">
-                            <div class="col-lg-12">
-                                <!-- single-blog-start -->
-                                <div class="single-blog">
-                                    <div class="blog-img">
-                                        <a href="#"><img src="img/blog/1.jpg" alt="blog" /></a>
-                                        <div class="date">
-                                            Aug <span>09</span>
-                                        </div>
-                                    </div>
-                                    <div class="blog-content pt-20">
-                                        <h3><a href="blog-details.html">Aypi non habent claritatem  insitam.</a></h3>
-                                        <span>HasTech</span>
-                                        <p>Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam.Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam.</p>
-                                        <a href="blog-details.html">Read more ...</a>
-                                    </div>
-                                </div>
-                                <!-- single-blog-end -->
-                            </div>
-                            <div class="col-lg-12">
-                                <!-- single-blog-start -->
-                                <div class="single-blog">
-                                    <div class="blog-img">
-                                        <a href="#"><img src="img/blog/2.jpg" alt="blog" /></a>
-                                        <div class="date">
-                                            Aug <span>09</span>
-                                        </div>
-                                    </div>
-                                    <div class="blog-content pt-20">
-                                        <h3><a href="blog-details.html">Bypi non habent claritatem  insitam.</a></h3>
-                                        <span>HasTech</span>
-                                        <p>Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam.Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam.</p>
-                                        <a href="blog-details.html">Read more ...</a>
-                                    </div>
-                                </div>
-                                <!-- single-blog-end -->
-                            </div>
-                            <div class="col-lg-12">
-                                <!-- single-blog-start -->
-                                <div class="single-blog">
-                                    <div class="blog-img">
-                                        <a href="#"><img src="img/blog/3.jpg" alt="blog" /></a>
-                                        <div class="date">
-                                            Aug <span>09</span>
-                                        </div>
-                                    </div>
-                                    <div class="blog-content pt-20">
-                                        <h3><a href="blog-details.html">Cypi non habent claritatem  insitam.</a></h3>
-                                        <span>HasTech</span>
-                                        <p>Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam.Aypi non habent claritatem  insitam. Aypi non habent claritatem  insitam.</p>
-                                        <a href="blog-details.html">Read more ...</a>
-                                    </div>
-                                </div>
-                                <!-- single-blog-end -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- blog-area-end -->
            
             <!-- footer-area-start -->
             <footer>
@@ -856,15 +701,14 @@ include 'autocomplete.php';
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <!-- footer-logo-start -->
-                                <div class="footer-logo mb-3">
-                                    <a href="#"><img src="img/logo/2.png" alt="logo" /></a>
-                                </div>
-                                <!-- footer-logo-end -->
+                                
+                                    <a href="index.php"><img src="logo7.png" id="logoo" alt="logo" /></a>
+                                                                <!-- footer-logo-end -->
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <!-- copy-right-area-start -->
                                 <div class="copy-right-area mb-3 text-center">
-                                    <p>Copyright © 2018 <a href="#">Hastech</a> . All Right Reserved</p>
+                                    <p>Copyright © 2018 <a href="#">Quickfox</a> . All Right Reserved</p>
                                 </div>
                                 <!-- copy-right-area-end -->
                             </div>
@@ -887,70 +731,6 @@ include 'autocomplete.php';
            </footer>
             <!-- footer-area-end -->
             <!-- modal-area-start -->
-            <div class="modal-area">
-                <!-- single-modal-start -->
-                <div class="modal fade" id="mymodal" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="modal-img">
-                                    <div class="single-img">
-                                        <img src="img/product/2.jpg" alt="hat" class="primary" />
-                                    </div>
-                                </div>
-                                <div class="model-text">
-                                    <h2><a href="#">Pyrolux Pyrostone</a> </h2>
-                                    <div class="product-rating">
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star-o"></i></a>
-                                    </div>
-                                    <div class="price-rate">
-                                        <span class="old-price"><del>$30.00</del></span>
-                                        <span class="new-price">$28.00</span>
-                                    </div>
-                                    <div class="short-description mt-20">
-                                        <p>Bacon ipsum dolor sit amet ut nostrud chuck, voluptate adipisicing veniam kielbasa fugiat ex spare ribs. Incididunt sint officia non cow, ut et. Cillum porchetta tongue occaecat laborum bacon aliquip fatback flank dolore short loin ball tip bresaola deserunt dolor. Shoulder fugiat ut in ut tail swine dolore, capicola ullamco beef occaecat meatball. Laboris turkey in et chuck deserunt ad incididunt do.</p>
-                                    </div>
-                                    <form action="#">
-                                        <input type="number" value="1"/>
-                                        <button type="submit">Add to cart</button>
-                                    </form>
-                                    <div class="product-meta">
-                                        <span>
-                                            Categories: 
-                                            <a href="#">albums</a>,<a href="#">Music</a>
-                                        </span>
-                                        <span>
-                                            Tags: 
-                                            <a href="#">albums</a>,<a href="#">Music</a>
-                                        </span>
-                                    </div>
-                                    <!-- social-icon-start -->
-                                    <div class="social-icon mt-20">
-                                        <ul>
-                                            <li><a href="#" data-toggle="tooltip" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" title="Share on Twitter"><i  class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" title="Email to a Friend"><i class="fa fa-envelope-o"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" title="Pin on Pinterest"><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- social-icon-end -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- single-modal-end -->
-            </div>
             <!-- modal-area-end -->
        </div>
       <!-- page-wraper-start -->
@@ -986,3 +766,111 @@ include 'autocomplete.php';
     </body>
 </html>
 
+<script type="text/javascript"> 	
+	
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+      });
+}
+
+/*An array containing all the country names in the world:*/
+// 
+var countries= <?php echo json_encode($shoplat);?>
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+
+
+</script>

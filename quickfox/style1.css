@@ -1,58 +1,4 @@
-/*-----------------------------------------------------------------------------------
 
-    Template Name: Mimosa-Responsive eCommerce Template 
-    Template URI: http://bootexperts.com
-    Description: This is html5 template
-    Author: Hastech
-    Author URI: http://bootexperts.com
-    Version: 1.0
-
------------------------------------------------------------------------------------
-    
-    CSS INDEX
-    ===================
-	
-    1. Theme Default CSS (body, link color, section etc)
-	2.  header
-		2.1  header-top-area
-	3.  slider-area	
-	4.  founder-area
-	5.  banner-area
-	6.  feature-product-area
-	7.  testimonial-area
-	8.  arrivals-area
-	9.  banner-area-2
-	10.  blog-area
-	11.  newslatter-area
-	12.  footer
-		12.1  footer-area
-	13. modal
-	14. home-2
-	15. home-3
-	16. home-4
-	17. home-5
-	18. home-6
-	19. shop
-	20. product-details
-	21. contact
-	22. about
-	23.  404 page
-	24. login
-	25. register
-	26.  Cart
-	27.  Wishlist
-	28.  checkout
-	29.  blog
-	30.  blog-details
-	
-	
-
------------------------------------------------------------------------------------*/
-
-/*----------------------------------------*/
-/*  1.  Theme default CSS
-/*----------------------------------------*/
-/* google-fonts */
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 html, body {height: 100%;}
 .floatleft {float:left}
@@ -274,9 +220,15 @@ body {
 /*----------------------------------------*/
 /*  2.1  header-top-area
 /*----------------------------------------*/
-.logo-area {
-  margin-top: 26px;
+.header-top-area{
+	background-color: #333;
+
+	color: white;
 }
+.fa {
+	color: white;
+}
+
 .menu-area ul li{
 	display:inline-block;
 	margin-right:40px;
@@ -286,10 +238,10 @@ body {
 	margin-right:0;
 }
 .menu-area ul li a{
-	color: #292929;
+	color: white;
 	display:inline-block;
 	font-size: 12px;
-	font-weight: 600;
+	font-weight: 900;
 	position: relative;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -599,7 +551,7 @@ body {
 	color:#ee3333;
 }
 .header-top-area.sticky,.home-2 .header-top-area.sticky,.home-4 .header-top-area.sticky {
-	background: rgba(255, 255, 255, 0.95) none repeat scroll 0 0;
+	background: rgba(51, 51, 51, 0.95) none repeat scroll 0 0;
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
   left: 0;
   position: fixed;
@@ -654,6 +606,9 @@ body {
   transform: translateY(-50%);
   width: 100%;
   z-index: 6;
+}
+.slider-text .black{
+	color: black;
 }
 .slider-text h5{
 	color: #292929;
@@ -751,8 +706,52 @@ body {
 /*----------------------------------------*/
 /*  4.  founder-area
 /*----------------------------------------*/
+.founder-area{
+	background: rgba(238, 51, 51,0.8) none repeat scroll 0 0;
+	border-radius: 100px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+.founder-area:hover {
+	background: rgba(51, 51, 51,1) none repeat scroll 0 0;
+	border-radius: 100px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.founder-area:hover .founder-description h3{
+	color: white;
+font-size: 12px;
+margin: 0 0 5px;
+text-transform: capitalize;
+}
+.founder-area:hover .founder-description h1{
+	font-size: 30px;
+	font-weight: 500;
+	margin: 0 0 40px;
+	text-transform: capitalize;
+	color: #ee3333;
+}
+.founder-area:hover .founder-description img {
+  margin-bottom: 35px;
+  display:inline-block;
+  color: white;
+}
+.founder-area:hover .founder-description p{
+	letter-spacing: 0.025em;
+	color: white;
+	line-height: 30px;
+	margin: 0 0 50px;
+}
+.founder-area:hover .founder-description h4{
+	font-size: 12px;
+	font-weight: 600;
+	margin: 0;
+	text-transform: uppercase;
+	color: #ee3333;
+}
 .founder-description h3{
-	color: #929292;
+	color: #333;
 font-size: 12px;
 margin: 0 0 5px;
 text-transform: capitalize;
@@ -762,6 +761,7 @@ text-transform: capitalize;
 	font-weight: 500;
 	margin: 0 0 40px;
 	text-transform: capitalize;
+	color: white;
 }
 .founder-description img {
   margin-bottom: 35px;
@@ -769,6 +769,7 @@ text-transform: capitalize;
 }
 .founder-description p{
 	letter-spacing: 0.025em;
+	color: #333;
 	line-height: 30px;
 	margin: 0 0 50px;
 }
@@ -777,9 +778,10 @@ text-transform: capitalize;
 	font-weight: 600;
 	margin: 0;
 	text-transform: uppercase;
+	color: white;
 }
 .founder-description h4 span{
-	color: #707070;
+	color: #333;
 	font-weight: 400;
 }
 /*----------------------------------------*/
@@ -977,7 +979,7 @@ color: #fff;
 	width: 40px;
 	background: #fff none repeat scroll 0 0;
 	box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
-	padding: 0 0;
+	padding: 5px 0;
 	text-align: center;
 	transition:.3s;
 }
@@ -1005,10 +1007,10 @@ color: #fff;
 	width: 40px;
 	background: #fff none repeat scroll 0 0;
 	box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
-	padding: 0 0;
+	padding: 5px 0;
 	text-align: center;
 	transition:.3s;
-	opacity: .75;
+	opacity: 1;
 }
 .product-wrapper .product-img .product-icon1 a:hover{
 	color:#ee3333;
@@ -1116,7 +1118,7 @@ color: #fff;
 /* 7.  testimonial-area
 /*----------------------------------------*/
 .testimonial-area{
-	background: #f6f6f6 url("img/back.jpg") no-repeat fixed center center;
+	background: #f6f6f6 url("img/back2.jpg") no-repeat fixed center center;
 	position:relative;
 }
 .single-testimonial .testimonial-img{
@@ -1351,8 +1353,10 @@ color: #fff;
 /* 12.1  footer-area
 /*----------------------------------------*/
 .footer-area{
-	border-top:1px solid #ebebeb;
+	border-top:3px solid #ee3333;
 	overflow:hidden;
+	background-color: #333;
+	height: 50px;
 }
 .copy-right-area p{
 	color: #929292;
@@ -1501,7 +1505,7 @@ a#scrollUp {
   background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
   border: 2px solid #ebebeb;
   bottom: 104px;
-  color: #292929;
+  color: black;
   font-size: 30px;
   font-weight: 600;
   padding: 12px 15px;
@@ -1948,9 +1952,15 @@ a#scrollUp:hover{
 /*  19. shop
 /*----------------------------------------*/
 .breadcrumbs-area{
-	background: #333  no-repeat scroll center top;
+	background: #ee3333  no-repeat scroll center top;
 	margin: 0;
 	padding: 120px 0 200px;
+	border-right-width: 20px;
+	border-right-color: #333;
+}
+#tr1{
+	color: white;
+	background-color: #333;
 }
 #c{
 	color: white;
@@ -1974,7 +1984,7 @@ a#scrollUp:hover{
 	
 }
 .breadcrumb-content ul li.active a{
-	color: #ee3333;
+	color: #3486b8;
 }
 .shop-main-area {
   background: #fff none repeat scroll 0 0;
@@ -2824,6 +2834,7 @@ a#scrollUp:hover{
 	color:#fff;
 	border:1px solid #ee3333;
 }
+
 /*----------------------------------------*/
 /*  26.  Cart
 /*----------------------------------------*/
@@ -3925,6 +3936,7 @@ blockquote {
   top: 100%;
   left: 0;
   right: 0;
+  color: black;
 }
 .autocomplete-items div {
   padding: 10px;
@@ -3941,3 +3953,12 @@ blockquote {
   background-color: DodgerBlue !important; 
   color: #ffffff; 
   }
+#logo{
+	position: relative;
+	top: 5px;
+	background-color: black;
+}  
+#logoo{
+	position: relative;
+	top: -30px;
+}

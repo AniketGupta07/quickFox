@@ -49,8 +49,8 @@
           if($result){  
             //echo "Account Successfully Created";
             echo "<script>
-                       alert('Account Successfully Created.Proceeding to login page.');
-                        window.location.href='login.php';
+                       alert('Account Successfully Created.Proceeding to home page.');
+                        window.location.href='../index.php';
                   </script>";  
           } 
           else 
@@ -123,28 +123,99 @@
   <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->  
   <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+  <link href="https://fonts.googleapis.com/css?family=Markazi+Text|Merriweather" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="css/util.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
+<style type="text/css">
+  /********************************************************************/
+/****************************************************************************/
+    body,html{
+      height: 100%;}
+    body {
+      background-image: url("abc.jpg");
+      background-size: 1920px 1080px;
+      background-repeat: no-repeat;
+    }
+    .container {
+      width: 100%;
+      padding: 15px;
+      display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+      justify-content: center;
+      vertical-align: center;
+      }
+    .login{
+      top: 100px;
+      background:rgba(255,255,255,0.7);
+      position:relative;
+      overflow: hidden;
+      width: 670px;
+      min-height: 300px;
+      border-radius: 10px;
+    }
+    .head{
+      background-color: #333;
+      font-size: 30px;
+      font-weight: 900;
+      color: white;
+      text-align: center;
+      width: 100%;
+      padding-top: 40px;
+      vertical-align: center;
+      opacity: 1;
+      padding-bottom: 15px;
+      font-family: 'Merriweather', serif;
+    }
+    .top-nav{
+      padding: 16px 14px;
+      background-color: #333;
+      color: white;
+      top: 0;
+      left: 0;
+      position: fixed;
+      width: 100%;
+    }
+    li {
+      display: inline-block;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  
+  </style>
 </head>
 <title>
   Sign Up
 </title>
 <body>
+<div class="top-nav" >
+    <ul>
+      <li><img src="../logo7.png" id="logo"></li>
+      <li><a href="index.php"><i class="fa fa-home" style="font-size:30px;color:white;"></i></a></li>
+    </ul>
 
+  </div>
   
      <center>   
     
 
-     <div class="limiter">
-    <div class="container-login100">
-      <div class="wrap-login100">
-        <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
-          <span class="login100-form-title-1">
-            Sign Up
-          </span>
-        </div>
+     <div class="container">
+    <div class="login">
+       <div class="head">
+        <span class="log">Sign Up</span>
+      </div>
     
       <form class="login100-form validate-form" action="signup.php" method="post">
     

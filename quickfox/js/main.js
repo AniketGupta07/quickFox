@@ -63,8 +63,8 @@ if ($(this).scrollTop() > 40){
     controlNavThumbs: false,          // Use thumbnails for Control Nav 
     pauseOnHover: true,               // Stop animation while hovering 
     manualAdvance: true,             // Force manual transitions 
-    prevText: '<i class="fa fa-angle-left"></i>',   // Prev directionNav text 
-    nextText: '<i class="fa fa-angle-right"></i>',  // Next directionNav text 
+    prevText: '<i class="fa fa-angle-left" style="color:red;"></i>',   // Prev directionNav text 
+    nextText: '<i class="fa fa-angle-right" style="color:red;"></i>',  // Next directionNav text 
     randomStart: true,               // Start on a random slide 
     beforeChange: function(){},       // Triggers before a slide transition 
     afterChange: function(){},        // Triggers after a slide transition 
@@ -85,7 +85,7 @@ if ($(this).scrollTop() > 40){
 		nav:true,
 		dots:false,
 		loop:true,
-		navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		navText:['<i class="fa fa-angle-left" style="color:red;"></i>','<i class="fa fa-angle-right" style="color:red;"></i>'],
 		responsive:{
 			0:{
 				items:1
@@ -112,7 +112,7 @@ testimonial-active
 		nav:true,
 		dots:false,
 		loop:true,
-		navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		navText:['<i class="fa fa-angle-left" style="color:red;"></i>','<i class="fa fa-angle-right" style="color:red;"></i>'],
 		responsive:{
 			0:{
 				items:1
@@ -138,7 +138,7 @@ testimonial-active
 		nav:true,
 		dots:false,
 		loop:true,
-		navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		navText:['<i class="fa fa-angle-left" style="color: black;"></i>','<i class="fa fa-angle-right" style="color: black;"></i>'],
 		responsive:{
 			0:{
 				items:1
@@ -164,7 +164,7 @@ testimonial-active
 		nav:false,
 		dots:false,
 		loop:true,
-		navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		navText:['<i class="fa fa-angle-left" style="color: black;"></i>','<i class="fa fa-angle-right" style="color: black;"></i>'],
 		responsive:{
 			0:{
 				items:1
@@ -299,7 +299,7 @@ $('.counter').counterUp({
  scrollUp
 ---------------------------- */	
 	$.scrollUp({
-        scrollText: '<i class="fa fa-angle-up"></i>',
+        scrollText: '<i class="fa fa-angle-up" style="color: black;"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
         animation: 'fade'

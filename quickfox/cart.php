@@ -8,7 +8,7 @@ include 'autocomplete.php';
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Mimosa-Responsive eCommerce Template</title>
+        <title>quickFox</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,7 +56,7 @@ include 'autocomplete.php';
                             <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                 <!-- logo-area-start -->
                                 <div class="logo-area">
-                                    <a href="index.html"><img src="img/flash.png" alt="logo" /></a>
+                                    <a href="index.php"><img src="logo7.png" alt="logo" /></a>
                                 </div>
                                 <!-- logo-area-end -->
                             </div>
@@ -65,7 +65,7 @@ include 'autocomplete.php';
                                 <div class="menu-area">
                                     <nav>
                                         <ul>
-                                            <li class="active"><a href="index.html">Home</a>
+                                            <li><a href="index.php">Home</a>
                                                 
                                             </li>
                                             <li><a href="bakeries1.php">Shop</a>
@@ -75,16 +75,16 @@ include 'autocomplete.php';
                                                     <li>
                                                         <ul class="sub-menu-2">
                                                             <li><a href="bakeries1.php">Bakeries</a></li>
-                                                            <li><a href="bakeries1.php">Groceries</a></li>
-                                                            <li><a href="bakeries1.php">Stationaries</a></li>
+                                                            <li><a href="groceries1.php">Groceries</a></li>
+                                                            <li><a href="stationeries1.php">Stationaries</a></li>
                                                            
                                                         </ul>
                                                     </li>
                                                     <li>
                                                         <ul class="sub-menu-2">
-                                                            <li><a href="bakeries1.php">Home care</a></li>
-                                                            <li><a href="bakeries1.php">Personal Care</a></li>
-                                                            <li><a href="bakeries1.php">Fruits & Veggies</a></li>
+                                                            <li><a href="homecare1.php">Home care</a></li>
+                                                            <li><a href="personalcare1.php">Personal Care</a></li>
+                                                            <li><a href="fruits1.php">Fruits & Veggies</a></li>
                                                            
                                                         </ul>
                                                     </li>
@@ -106,14 +106,14 @@ include 'autocomplete.php';
                                             <li><a href="index.php">Home</a>
                                                 
                                             </li>
-                                            <li><a href="shop.html">Men</a>
+                                            <li><a href="groceries1.php">Shop</a>
                                                 <ul>
-                                                    <li><a href="shop.html">Bakeries</a></li>
-                                                    <li><a href="shop.html">Groceries</a></li>
-                                                    <li><a href="shop.html">Stationeries</a></li>
-                                                    <li><a href="shop.html">Homecare</a></li>
-                                                    <li><a href="shop.html">Personal Care</a></li>
-                                                    <li><a href="shop.html">Fruits and Veggies </a></li>
+                                                    <li><a href="bakeries1.php">Bakeries</a></li>
+                                                    <li><a href="groceries1.php">Groceries</a></li>
+                                                    <li><a href="stationeries1.php">Stationeries</a></li>
+                                                    <li><a href="homecare1.php">Homecare</a></li>
+                                                    <li><a href="personalcare1.php">Personal Care</a></li>
+                                                    <li><a href="fruits1.php">Fruits and Veggies </a></li>
                                                     
                                                 </ul>
                                             </li>
@@ -129,13 +129,13 @@ include 'autocomplete.php';
                                 <!-- header-right-area-start -->
                                 <div class="header-right-area">
                                     <ul>
-                                        <li><a href="#" title="Shops Nearby"><img src="img/mark.jpeg"></a>
+                                        <li><a href="near.php" title="Shops Nearby"><i class="fa fa-map-marker"></i></a>
                                             
                                         </li>
-                                        <li><a href="#" id="show-search"><i class="icon ion-ios-search-strong"></i></a>
+                                        <li><a href="#" id="show-search"><i class="fa fa-search"></i></a>
                                             <div class="search-content" id="hide-search">
                                                 <span class="close" id="close-search">
-                                                    <i class="ion-close"></i>
+                                                    <i class="fa fa-window-close"></i>
                                                 </span>
                                                 <div class="search-text">
                                                     <h1>Search</h1>
@@ -143,14 +143,14 @@ include 'autocomplete.php';
                             <div class="autocomplete">    
                             <input type="text" name="Items" id="myInput" placeholder="Type your keyword...">
 
-                            <button type="submit" class="btn"><img src="img/core-img/search.png" alt="Submit"></button>
+                            <button type="submit" class="btn"><i class="fa fa-search" alt="Submit"></i></button>
                         </div>
                      
                     </form>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="cart.php"><img src="img/cart.jpg" style="width: 30px;padding-bottom: -2px; "></a>
+                                        <li><a href="<?php if(isset($_SESSION["user"])){?>cart.php<?php } else{ ?>account/login.php<?php } ?> "><i class="fa fa-shopping-basket"></i></a>
                                             <span><?php if(isset($_SESSION["shopping_cart"])){echo count($_SESSION["shopping_cart"]);}else{echo "0";};?></span>
                                             <div class="mini-cart-sub">
                                                 <div class="cart-product">
@@ -176,19 +176,28 @@ include 'autocomplete.php';
                                                 </div>
                                                 
                                                 <div class="cart-bottom">
-                                                    <a href="cart.php">Edit Cart</a>
+                                                    <a href="<?php if(isset($_SESSION["user"])){?>cart.php<?php } else{ ?>account/login.php<?php } ?> ">Edit Cart</a>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="#" id="show-cart" title="Account"><img src="img/menu.png"></a>
+                                        <li><a href="#" id="show-cart" title="Account"><i class="fa fa-reorder"></i></a>
                                             <div class="shapping-area" id="hide-cart">
                                                 
                                                 <div class="single-shapping">
                                                     <span>My Account</span>
+                                                    <?php if(isset($_SESSION["user"])){ ?>
                                                     <ul>
-                                                        <li><a href="account/signup.php">Register</a></li>
+                                                        <li>Hello <?php echo $_SESSION["user"]; ?></li>
+                                                        <li><a href="logout.php">Log Out</a></li>
+                                                    </ul>    
+                                                    <?php } 
+                                                    else{
+                                                    ?>
+                                                    <ul>
+                                                        <li><a href="account/login.php">Register</a></li>
                                                         <li><a href="account/login.php">Login</a></li>
                                                     </ul>
+                                                <?php } ?>
                                                 </div>
                                             </div>
                                         </li>
@@ -208,7 +217,7 @@ include 'autocomplete.php';
                                 <div class="mobile-menu">
                                     <nav id="mobile-menu-active">
                                         <ul id="nav">
-                                            <li><a href="index.html">Home</a>
+                                            <li><a href="index.php">Home</a>
                                                 <!--  -->
                                             </li>
                                <li><a href="bakeries1.php">Shop</a>
@@ -242,8 +251,7 @@ include 'autocomplete.php';
 							<div class="breadcrumb-content text-center">
 								<h2 id="c">cart</h2>
 								<ul>
-									<li><a href="#">Home /</a></li>
-									<li class="active"><a href="#">cart</a></li>
+									<li><a href="#">Home/Cart</a></li>
 								</ul>
 							</div>
 						</div>
@@ -287,7 +295,7 @@ include 'autocomplete.php';
 													<td>
                                              <form method="get" >
                                                  <input type="hidden" name="id_" value="<?php echo $values["item_id"]; ?>" />
-                                                <input type="submit" name="remove" value="Remove">
+                                                <input type="submit" name="remove" value="Remove item  ">
                                             </form>
                                         </td>
 												</tr>
@@ -305,8 +313,8 @@ include 'autocomplete.php';
 								<div class="buttons-cart mb-30 mt-3">
 									<ul>
 										<li><a href="#"><form method="post"><input type="submit" name="clear_cart" value="Clear Cart" class="buttons-cart mb-30 mt-3"></form></a></li>
-										<li><a href="bakeries1.php">Continue Shopping</a></li>
-										<li><a href="#"> GO!!!</a></li>
+										<li><a href="personalcare1.php">Continue Shopping</a></li>
+										<li><a href="go.php"> GO!!!</a></li>
 									</ul>
 								</div>
 								
@@ -325,15 +333,13 @@ include 'autocomplete.php';
 						<div class="row">
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 								<!-- footer-logo-start -->
-								<div class="footer-logo mb-3">
-									<a href="#"><img src="img/logo/2.png" alt="logo" /></a>
-								</div>
+									<a href="#" id="logoo"><img src="logo7.png" alt="logo" /></a>
 								<!-- footer-logo-end -->
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<!-- copy-right-area-start -->
 								<div class="copy-right-area mb-3 text-center">
-									<p>Copyright © 2018 <a href="#">Hastech</a> . All Right Reserved</p>
+									<p>Copyright © 2018 <a href="#">quickFox</a> . All Right Reserved</p>
 								</div>
 								<!-- copy-right-area-end -->
 							</div>
@@ -390,3 +396,111 @@ include 'autocomplete.php';
         <script src="js/main.js"></script>
     </body>
 </html>
+<script type="text/javascript">     
+    
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+      });
+}
+
+/*An array containing all the country names in the world:*/
+// 
+var countries= <?php echo json_encode($shoplat);?>
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+
+
+</script>
