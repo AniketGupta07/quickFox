@@ -1,6 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
+$servername = '192.168.31.9';
+$username = "user";
 $password = "applemango";
 $dbname = "pikachu";
 // class latlng{
@@ -2070,13 +2070,13 @@ tr:nth-child(even) {
 <img src="https://i.gifer.com/K4UU.gif">
 </div>
 <nav class="navbar navbar">
-  <div class="container-fluid">
+  <div class="container-fluid" >
     
 
     <div id="btns" class="btn-group" style="display: none; font-family: 'Slabo 27px', serif;">
     <button style="font-size: 24px;" type="button" id="cost" onclick="calc(1,0)" class="btn btn-info">Cost Effective</button>
     <button type="button" style="font-size: 24px;" id="dist" onclick="calc(0,1)" class="btn btn-info">Dist. Effective</button>
-    <button type="button" style="font-size: 24px;" id="both" onclick="calc(1,1)" class="btn btn-info " autofocus="autofocus">Both Effective</button>
+    <button type="button" style="font-size: 24px;" id="both" onclick="calc(1,1)" class="btn btn-info " autofocus="active" >Both Effective</button>
   </div></div>
 </nav>
 <!-- <nav class="navbar navbar-inverse">
@@ -2134,7 +2134,7 @@ tr:nth-child(even) {
 
   window.shoplatt = <?php echo json_encode($shoplat); ?>;
   window.shoplonn = <?php echo json_encode($shoplon); ?>;
-  
+  // console.log(shoplatt);
   var pur = <?php echo json_encode($pur); ?>;
 
    // while(window.mylat=="0"){
@@ -2266,11 +2266,13 @@ var tbl = document.getElementById('MyTable'); // table reference
    for(var n=0;n<numitem;n++){
     tp.push(Infinity);
    }
+   // console.log(order);  
    var td = new Array();
    var i,j;
    // var remove = new Array();
    var r=0;
    var size=order.length-2;
+   var q= order.length-2;
    for(var l=0;l<size;l++){
     latx.push(shoplat[order[l+1]-1]);
     lonx.push(shoplon[order[l+1]-1]);
@@ -2285,6 +2287,7 @@ var tbl = document.getElementById('MyTable'); // table reference
       if(k>0){
          if((pr*db[j][k+2]+di*0.025*dist[order[i+1]][order[i]])<final[k]){
         final[k]=pr*db[j][k+2]+di*0.025*dist[order[i+1]][order[i]];
+        // console.log(dist[order[i+1]][order[i]]);  
         tp[k] = db[j][k+2];
         if(finalshop[k]!=-1){
           db[finalshop[k]][k+2]=Infinity;
@@ -2331,18 +2334,34 @@ var tbl = document.getElementById('MyTable'); // table reference
      var latLng = new google.maps.LatLng(lat,lng);
    
      r++;
-     porder.splice(porder.indexOf(x+1),1);
+     
       shoplat.splice(x,1);
       shoplon.splice(x,1);
       db.splice(x,1);
       size--;x--;
     }
-   }td=0;
-   for(var n=1;n<porder.length;n++){
-    td+=dist[porder[n]][porder[n-1]];
-    console.log(dist[porder[n]][porder[n-1]]);
    }
-   console.log(tp);
+   for(var x=0;x<q;x++){
+    // console.log(window.shoplatt[porder[x+1]-1]);
+    // console.log(shoplat.indexOf(window.shoplatt[porder[x+1]-1]));
+
+    if(shoplat.indexOf(window.shoplatt[porder[x+1]-1]) == -1)
+    {  porder.splice(x+1,1);
+    x--;
+    q--;
+   }}
+   td=0;
+   // console.log(shoplat);
+   // console.log(porder);
+   // console.log(dist);
+   for(var n=1;n<porder.length;n++){
+    // console.log(dist[porder[n]][porder[n-1]])
+    td+=dist[porder[n]][porder[n-1]];
+    // console.log(dist[porder[n]][porder[n-1]]);
+   }
+   if(pr==0)td-=150;
+   else td+=250;
+   // console.log(tp);
    td/=1000;
    document.getElementById("tcst").innerHTML+="<br>"+"Total Distance to be travelled = "+td+" km.";
 // console.log(final);

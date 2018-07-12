@@ -295,7 +295,7 @@ include 'autocomplete.php';
 													<td>
                                              <form method="get" >
                                                  <input type="hidden" name="id_" value="<?php echo $values["item_id"]; ?>" />
-                                                <input type="submit" name="remove" value="Remove item  ">
+                                                <input style="color: red; font-size: 24px;" type="submit" name="remove" value="&times;">
                                             </form>
                                         </td>
 												</tr>
@@ -312,7 +312,7 @@ include 'autocomplete.php';
 							<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
 								<div class="buttons-cart mb-30 mt-3">
 									<ul>
-										<li><a href="#"><form method="post"><input type="submit" name="clear_cart" value="Clear Cart" class="buttons-cart mb-30 mt-3"></form></a></li>
+										<li><a href="#"><form method="post"><input type="submit" name="clear_cart" value="Clear Cart" id="clean"></form></a></li>
 										<li><a href="personalcare1.php">Continue Shopping</a></li>
 										<li><a href="go.php"> GO!!!</a></li>
 									</ul>

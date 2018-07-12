@@ -3962,3 +3962,6 @@ blockquote {
 	position: relative;
 	top: -30px;
 }
+#clean:hover{
+	background-color:#ec4445;
+}

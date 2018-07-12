@@ -8,8 +8,8 @@ if(isset($_SESSION["shopping_cart"])){
 if ($connect->connect_error) {
     die("Connection failed: " . $connect->connect_error);
 }
-$poke="truncate list";
-  $connect->query($poke); 
+// $poke="truncate list";
+//   $connect->query($poke); 
 
 // echo $check;
 foreach ($_SESSION["shopping_cart"] as $keys => $values) 
@@ -24,6 +24,6 @@ foreach ($_SESSION["shopping_cart"] as $keys => $values)
 $connect->close();
 }
 
-redirect_to("near1.php");
+redirect_to("near.php");
 
 ?>

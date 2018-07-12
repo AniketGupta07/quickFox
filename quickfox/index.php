@@ -98,7 +98,7 @@ include 'autocomplete.php';
                                 </div>
                                 <!-- menu-area-end -->
                             </div>
-                            <div class="mobile-menu-area hidden-md hidden-lg">
+                            <!-- <div class="mobile-menu-area hidden-md hidden-lg">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -126,7 +126,7 @@ include 'autocomplete.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                             <div class="col-lg-3 col-md-3 com-sm-6 col-xs-6">
                                 <!-- header-right-area-start -->
                                 <div class="header-right-area">

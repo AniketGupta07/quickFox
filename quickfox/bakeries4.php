@@ -214,7 +214,7 @@ include 'autocomplete.php';
                 </div>
                 <!-- header-top-area-end -->
                 <!-- mobile-menu-area-start -->
-                <div class="mobile-menu-area hidden-md hidden-lg">
+                <!-- <div class="mobile-menu-area hidden-md hidden-lg">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -242,7 +242,7 @@ include 'autocomplete.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- mobile-menu-area-end -->
             </header>
             <!-- header-area-end -->

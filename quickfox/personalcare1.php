@@ -43,11 +43,7 @@ include 'autocomplete.php';
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body class="shop">
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
+       
         <!-- page-wraper-start -->
         <div id="page-wraper">
             <!-- header-area-start -->
@@ -214,7 +210,7 @@ include 'autocomplete.php';
                 </div>
                 <!-- header-top-area-end -->
                 <!-- mobile-menu-area-start -->
-                <div class="mobile-menu-area hidden-md hidden-lg">
+<!--                 <div class="mobile-menu-area hidden-md hidden-lg">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -243,7 +239,7 @@ include 'autocomplete.php';
                         </div>
                     </div>
                 </div>
-                <!-- mobile-menu-area-end -->
+ -->                <!-- mobile-menu-area-end -->
             </header>
             <!-- header-area-end -->
             <!-- breadcrumbs-area-start -->

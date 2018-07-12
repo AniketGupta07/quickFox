@@ -31,10 +31,10 @@
 
     if(empty($errors))
     {
-      $dbhost="localhost";
+      $dbhost="192.168.31.9";
       $dbname="pikachu";
       $dbpswd="applemango";
-      $dbuser="root";
+      $dbuser="user";
       $connection=mysqli_connect($dbhost,$dbuser,$dbpswd,$dbname);
 
     if(mysqli_connect_errno())
